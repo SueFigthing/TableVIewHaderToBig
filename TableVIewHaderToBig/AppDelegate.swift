@@ -15,6 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let home = HomeViewController()
+        let my = MyViewController()
+        let nav1 = UINavigationController(rootViewController:home)
+        let nav2 = UINavigationController(rootViewController:my)
+        
+        let tabBar = UITabBarController()
+        
+        tabBar.viewControllers = [nav1,nav2]
+        
+        self.window?.backgroundColor = UIColor.whiteColor()
+        self.window?.rootViewController = tabBar
+        self.window?.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
     }
